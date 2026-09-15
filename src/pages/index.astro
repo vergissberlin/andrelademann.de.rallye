@@ -2,14 +2,14 @@
 import '../styles/global.css';
 ---
 <html lang="de">
-  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><title>RALLYE – Bring den Sommer zurück</title><meta name="description" content="Wirf eine Münze ein und hol dir dein virtuelles Rallye-Eis zurück." /><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23ed1c24'/%3E%3Cpath d='M10 70L50 15l40 55' fill='%23ffe500'/%3E%3C/svg%3E" /></head>
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><title>RALLYE – Bring den Sommer zurück</title><meta name="description" content="Wirf eine Münze ein und hol dir dein virtuelles Rallye-Eis zurück." /><meta property="og:image" content="/images/rallye-automat.png" /><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23ed1c24'/%3E%3Cpath d='M10 70L50 15l40 55' fill='%23ffe500'/%3E%3C/svg%3E" /></head>
   <body>
     <div class="ticker">☼ SONNENALARM 1994 <span>•</span> DAS EIS DEINER KINDHEIT IST ZURÜCK</div>
     <main>
       <header class="topbar"><a class="logo" href="#top">RALLYE<span>!</span></a><div class="nav-note">EINWURF FÜR DIE ERINNERUNG <i>↘</i></div><div class="mini-check">✦</div></header>
       <section class="hero" id="top">
         <div class="sunburst" aria-hidden="true"></div><div class="shape shape-a"></div><div class="shape shape-b">★</div><div class="shape shape-c">✳</div>
-        <div class="intro"><div class="label-row"><span class="new-badge">NEU</span><span class="year-badge">'98</span><span class="price-badge">8.–</span></div><p class="eyebrow">DIE SOMMERFERIEN-MASCHINE</p><h1><em>RALLYE</em><br />BRING IHN<br />ZURÜCK.</h1><p class="lede">Das rote Wassereis deiner Kindheit. Einmal Freibad. Einmal Sommer.</p><div class="product-callout"><img src="/images/rallye-eis.png" alt="Rotes Rallye-Rennwagen-Wassereis" /><span>WASSEREIS<br /><b>VOLL AUF EIS!</b></span></div><div class="instructions"><span class="step-no">01</span><span>1× MÜNZE EINWERFEN.<br /><b>EIS BEKOMMEN.</b></span></div></div>
+        <div class="intro"><div class="label-row"><span class="new-badge">NEU</span><span class="year-badge">'98</span><span class="price-badge">8.–</span></div><p class="eyebrow">DIE SOMMERFERIEN-MASCHINE</p><h1><em>RALLYE</em><br />BRING IHN<br />ZURÜCK.</h1><p class="lede">Das rote Wassereis deiner Kindheit. Einmal Freibad. Einmal Sommer.</p><div class="product-callout"><img src="/images/rallye-eis.svg" alt="Rotes Rallye-Rennwagen-Wassereis" /><span>WASSEREIS<br /><b>VOLL AUF EIS!</b></span></div><div class="instructions"><span class="step-no">01</span><span>1× MÜNZE EINWERFEN.<br /><b>EIS BEKOMMEN.</b></span></div></div>
         <div class="machine-wrap">
           <div class="machine-status"><span class="status-light"></span><span id="statusText">BEREIT FÜR EINEN EINWURF</span></div>
           <div class="machine" id="machine" aria-label="Rallye Eisautomat">
@@ -18,12 +18,13 @@ import '../styles/global.css';
             <div class="machine-panel"><div class="screen"><span id="counterLabel">AUSGEGEBEN</span><strong id="counter">12 483</strong></div><div class="buttons"><button class="round yellow" aria-label="Rallye starten">GO</button><button class="round cyan" aria-label="Info">?</button><button class="round magenta" aria-label="Sound">♪</button></div></div>
             <div class="machine-art"><div class="racing-flag"></div><div class="ice-sticker">DAS<br /><b>ROTE</b><br />DING!</div><div class="speed-lines"></div></div>
             <div class="coin-slot"><span>COIN</span><div class="slot"></div></div>
-            <div class="dispense"><div class="flap"></div><div id="ice" class="ice" role="img" aria-label="Rotes Rallye-Rennwagen-Eis"><img src="/images/rallye-eis.png" alt="" /></div></div>
+            <div class="dispense"><div class="flap"></div><div id="ice" class="ice" role="img" aria-label="Rotes Rallye-Rennwagen-Eis"><img src="/images/rallye-eis.svg" alt="" /></div></div>
           </div>
           <button id="coinButton" class="coin-button"><span class="coin">★</span><span>MÜNZE EINWERFEN</span><small>ENTER</small></button>
         </div>
       </section>
       <section class="result" id="result" aria-live="polite"><div class="result-copy"><p class="eyebrow">DEIN MOMENT</p><h2>DU WARST<br /><em>DABEI.</em></h2><p>Dein Rallye ist gerade aus dem Automaten gerollt. Teile die Nummer, bevor der Sommer vorbei ist.</p></div><div class="number-card"><span>RALLYE · BISHER AUSGEGEBEN</span><strong id="yourNumber">#12.484</strong><button id="shareButton">MEIN RALLYE TEILEN <b>↗</b></button></div></section>
+      <section class="archive-reference"><div class="archive-reference__image"><img src="/images/rallye-archive-poster.png" alt="Originale deutsche Schöller-Eiskarte aus den 90ern mit Rallye-Eis" /><span>ARCHIV<br />'98</span></div><div><p class="eyebrow">DAS ORIGINAL ALS VORBILD</p><h2>DER SOMMER<br /><em>WAR BUNT.</em></h2><p>Die neue Seite übernimmt die laute blaue Grundfläche, die Preisetiketten und die handgemachte Produkt-Collage aus der historischen Eiskarte.</p></div></section>
       <section class="marquee"><span>RALLYE MUSS ZURÜCK</span><i>✦</i><span>RALLYE MUSS ZURÜCK</span><i>✦</i><span>RALLYE MUSS ZURÜCK</span></section>
       <footer><span>Eine Fan-Kampagne für das Eis, das nach Sommer schmeckte.</span><span>MADE WITH ♥ IN 2026</span></footer>
     </main>
