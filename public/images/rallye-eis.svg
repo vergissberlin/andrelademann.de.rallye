@@ -1,16 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-labelledby="title desc">
-  <title id="title">Rotes Rallye-Rennwagen-Wassereis</title>
-  <desc id="desc">Stilisierte rote Rennwagenform auf einem Holzstiel.</desc>
-  <defs>
-    <linearGradient id="ice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff6b57"/><stop offset=".48" stop-color="#ed1c24"/><stop offset="1" stop-color="#a90e2d"/></linearGradient>
-  </defs>
-  <g stroke="#151515" stroke-linejoin="round" stroke-width="10">
-    <path fill="#d39a53" d="M360 137 420 127v16l-60 11z"/>
-    <path fill="url(#ice)" d="m31 133 59-55 73 5 43-37 112 18 58 68-39 43-72-7-21 27H76z"/>
-    <path fill="#ff9b75" d="m204 83 46-22 53 9-32 29z"/>
-    <path fill="#fff8e7" d="m109 117 46-16 19 10-48 16z" stroke-width="7"/>
-    <circle fill="#151515" cx="110" cy="177" r="24"/><circle fill="#fff8e7" cx="110" cy="177" r="8" stroke-width="6"/>
-    <circle fill="#151515" cx="293" cy="177" r="24"/><circle fill="#fff8e7" cx="293" cy="177" r="8" stroke-width="6"/>
-  </g>
-  <path d="m48 150 62-1M164 148l70-1" fill="none" stroke="#ffd530" stroke-width="11"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc" role="img" viewBox="0 0 420 260"><title id="title">Rotes Rallye-Rennwagen-Wassereis</title><desc id="desc">Stilisierte rote Rennwagenform auf einem Holzstiel.</desc><defs><linearGradient id="ice" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#ff6b57"/><stop offset=".48" stop-color="#ed1c24"/><stop offset="1" stop-color="#a90e2d"/></linearGradient></defs><g stroke="#151515" stroke-linejoin="round" stroke-width="10"><path fill="#d39a53" d="M360 137 420 127v16l-60 11z"/><path fill="url(#ice)" d="m31 133 59-55 73 5 43-37 112 18 58 68-39 43-72-7-21 27H76z"/><path fill="#ff9b75" d="m204 83 46-22 53 9-32 29z"/><path fill="#fff8e7" stroke-width="7" d="m109 117 46-16 19 10-48 16z"/><circle cx="110" cy="177" r="24" fill="#151515"/><circle cx="110" cy="177" r="8" fill="#fff8e7" stroke-width="6"/><circle cx="293" cy="177" r="24" fill="#151515"/><circle cx="293" cy="177" r="8" fill="#fff8e7" stroke-width="6"/></g><path fill="none" stroke="#ffd530" stroke-width="11" d="m48 150 62-1M164 148l70-1"/></svg>
