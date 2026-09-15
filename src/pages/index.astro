@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+---
+<html lang="de">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><title>RALLYE – Bring den Sommer zurück</title><meta name="description" content="Wirf eine Münze ein und hol dir dein virtuelles Rallye-Eis zurück." /><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23ed1c24'/%3E%3Cpath d='M10 70L50 15l40 55' fill='%23ffe500'/%3E%3C/svg%3E" /></head>
+  <body>
+    <div class="ticker">☼ SONNENALARM 1994 <span>•</span> DAS EIS DEINER KINDHEIT IST ZURÜCK</div>
+    <main>
+      <header class="topbar"><a class="logo" href="#top">RALLYE<span>!</span></a><div class="nav-note">EINWURF FÜR DIE ERINNERUNG <i>↘</i></div><div class="mini-check">✦</div></header>
+      <section class="hero" id="top">
+        <div class="sunburst" aria-hidden="true"></div><div class="shape shape-a"></div><div class="shape shape-b">★</div><div class="shape shape-c">✳</div>
+        <div class="intro"><p class="eyebrow">DIE SOMMERFERIEN-MASCHINE</p><h1>BRING DEN<br /><em>SOMMER</em><br />ZURÜCK.</h1><p class="lede">Einmal Kind sein. Einmal Freibad. Einmal Rallye.</p><div class="instructions"><span class="step-no">01</span><span>DEN KNOPF DRÜCKEN.<br /><b>EIS BEKOMMEN.</b></span></div></div>
+        <div class="machine-wrap">
+          <div class="machine-status"><span class="status-light"></span><span id="statusText">BEREIT FÜR EINEN EINWURF</span></div>
+          <div class="machine" id="machine" aria-label="Rallye Eisautomat">
+            <img class="machine-hero-asset" src="/images/rallye-automat.png" alt="Originalgetreuer Rallye-Eisautomat im Stil der 1990er" />
+            <div class="machine-top"><span>✦</span><strong>RALLYE</strong><span>✦</span></div>
+            <div class="machine-panel"><div class="screen"><span id="counterLabel">AUSGEGEBEN</span><strong id="counter">12 483</strong></div><div class="buttons"><button class="round yellow" aria-label="Rallye starten">GO</button><button class="round cyan" aria-label="Info">?</button><button class="round magenta" aria-label="Sound">♪</button></div></div>
+            <div class="machine-art"><div class="racing-flag"></div><div class="ice-sticker">DAS<br /><b>ROTE</b><br />DING!</div><div class="speed-lines"></div></div>
+            <div class="coin-slot"><span>COIN</span><div class="slot"></div></div>
+            <div class="dispense"><div class="flap"></div><div id="ice" class="ice" role="img" aria-label="Rotes Rallye-Rennwagen-Eis"><img src="/images/rallye-eis.png" alt="" /></div></div>
+          </div>
+          <button id="coinButton" class="coin-button"><span class="coin">★</span><span>MÜNZE EINWERFEN</span><small>ENTER</small></button>
+        </div>
+      </section>
+      <section class="result" id="result" aria-live="polite"><div class="result-copy"><p class="eyebrow">DEIN MOMENT</p><h2>DU WARST<br /><em>DABEI.</em></h2><p>Dein Rallye ist gerade aus dem Automaten gerollt. Teile die Nummer, bevor der Sommer vorbei ist.</p></div><div class="number-card"><span>ICH WAR NUMMER</span><strong id="yourNumber">#12.484</strong><button id="shareButton">MEIN RALLYE TEILEN <b>↗</b></button></div></section>
+      <section class="marquee"><span>RALLYE MUSS ZURÜCK</span><i>✦</i><span>RALLYE MUSS ZURÜCK</span><i>✦</i><span>RALLYE MUSS ZURÜCK</span></section>
+      <footer><span>Eine Fan-Kampagne für das Eis, das nach Sommer schmeckte.</span><span>MADE WITH ♥ IN 2026</span></footer>
+    </main>
+    <dialog id="shareDialog"><button class="close" id="closeDialog">×</button><p class="eyebrow">DEIN SHARE-MOMENT</p><h2>ICH WAR <em>DABEI.</em></h2><div class="share-preview"><div><small>RALLYE</small><strong>#12.484</strong><span>BRING DEN SOMMER ZURÜCK</span></div><div class="preview-ice">R</div></div><p class="dialog-note">Speichere deine Karte oder teile sie direkt mit deinen Freunden.</p><div class="dialog-actions"><button id="downloadButton" class="primary">KARTE DOWNLOADEN ↓</button><button id="nativeShare" class="secondary">TEILEN ↗</button></div></dialog>
+    <script>
+      const coinButton=document.querySelector('#coinButton'), machine=document.querySelector('#machine'), ice=document.querySelector('#ice'), result=document.querySelector('#result'), statusText=document.querySelector('#statusText'), counter=document.querySelector('#counter'), counterLabel=document.querySelector('#counterLabel'), shareButton=document.querySelector('#shareButton'), dialog=document.querySelector('#shareDialog'); let busy=false;
+      const setStatus=(text)=>statusText.textContent=text;
+      coinButton.addEventListener('click',()=>{ if(busy)return; busy=true; coinButton.classList.add('disabled'); machine.classList.add('working'); setStatus('MÜNZE WIRD EINGEZOGEN …'); setTimeout(()=>setStatus('MOTOR STARTET …'),600); setTimeout(()=>{setStatus('RALLYE KOMMT!');machine.classList.add('dispensing');ice.classList.add('show');},1400); setTimeout(()=>{counter.textContent='12 484';counterLabel.textContent='AUSGEGEBEN';setStatus('DEIN RALLYE IST DA!');result.classList.add('visible');result.scrollIntoView({behavior:'smooth',block:'center'});},2500); });
+      shareButton.addEventListener('click',()=>dialog.showModal()); document.querySelector('#closeDialog').addEventListener('click',()=>dialog.close()); document.querySelector('#nativeShare').addEventListener('click',async()=>{if(navigator.share) await navigator.share({title:'Rallye muss zurück!',text:'Mein Rallye war Nummer #12.484',url:location.href});else await navigator.clipboard.writeText(location.href);});
+      document.querySelector('#downloadButton').addEventListener('click',()=>{const c=document.createElement('canvas');c.width=1200;c.height=630;const x=c.getContext('2d');x.fillStyle='#ffe500';x.fillRect(0,0,1200,630);x.fillStyle='#ed1c24';x.fillRect(0,0,1200,80);x.fillStyle='#111';x.font='900 110px Arial';x.fillText('RALLYE',90,220);x.font='900 72px Arial';x.fillText('ICH WAR NUMMER',90,340);x.font='900 140px Arial';x.fillText('#12.484',90,490);x.font='bold 30px Arial';x.fillText('BRING DEN SOMMER ZURÜCK',90,560);const a=document.createElement('a');a.download='mein-rallye-12484.png';a.href=c.toDataURL();a.click();});
+    </script>
+  </body>
+</html>
